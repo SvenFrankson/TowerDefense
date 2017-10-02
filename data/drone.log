@@ -1,0 +1,45 @@
+Exporter version: 5.2.0, Blender version: 2.78 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used:
+		selected layers only:  true
+		flat shading entire scene:  false
+		inline textures:  false
+		texture directory:  C:\Users\Sven\Documents\SvenFrankson\TowerDefense\data\
+	Python World class constructor completed
+	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
+	processing begun of mesh:  Head
+		processing begun of Standard material:  Stone
+		num positions      :  20
+		num normals        :  20
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  108
+	processing begun of mesh:  RingBottom
+		registered as also a user of material:  Stone
+		num positions      :  32
+		num normals        :  32
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  192
+	processing begun of mesh:  RingTop
+		registered as also a user of material:  Stone
+		num positions      :  32
+		num normals        :  32
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  192
+	processing begun of mesh:  Body
+		registered as also a user of material:  Stone
+		num positions      :  8
+		num normals        :  8
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  36
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 0.034 secs

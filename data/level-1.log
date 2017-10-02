@@ -1,0 +1,384 @@
+Exporter version: 5.2.0, Blender version: 2.78 (sub 0)
+========= Conversion from Blender to Babylon.js =========
+	Scene settings used:
+		selected layers only:  true
+		flat shading entire scene:  false
+		inline textures:  false
+		texture directory:  C:\Users\Sven\Documents\SvenFrankson\Escape\data\
+	Python World class constructor completed
+	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
+	processing begun of mesh:  CableBox.004
+		processing begun of Standard material:  BlackPlastic
+		num positions      :  88
+		num normals        :  88
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  516
+	processing begun of mesh:  CableBox.003
+		mesh is an instance of :  CableBox.004.  Processing halted.
+	processing begun of mesh:  CableBox.002
+		mesh is an instance of :  CableBox.004.  Processing halted.
+	processing begun of mesh:  CableBox.001
+		mesh is an instance of :  CableBox.004.  Processing halted.
+	processing begun of mesh:  Cable
+		processing begun of Standard material:  OrangePlastic
+		processing begun of Standard material:  GreyPlastic
+		processing begun of multimaterial:  level_1.Multimaterial#0
+		num positions      :  600
+		num normals        :  600
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1800
+	processing begun of mesh:  CableBox
+		mesh is an instance of :  CableBox.004.  Processing halted.
+	processing begun of mesh:  S-Crate-Top3
+		WARNING: No materials have been assigned: 
+		num positions      :  235
+		num normals        :  235
+		num uvs            :  470
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  366
+		WARNING: # of 0 area faces found:  8
+	processing begun of mesh:  S-Crate-Bottom3
+		WARNING: No materials have been assigned: 
+		num positions      :  408
+		num normals        :  408
+		num uvs            :  816
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  630
+	processing begun of mesh:  S-Crate-Bottom2
+		mesh is an instance of :  S-Crate-Bottom3.  Processing halted.
+	processing begun of mesh:  S-Crate-Top2
+		mesh is an instance of :  S-Crate-Top3.  Processing halted.
+	processing begun of mesh:  S-Crate-Top1
+		mesh is an instance of :  S-Crate-Top3.  Processing halted.
+	processing begun of mesh:  S-Crate-Bottom1
+		mesh is an instance of :  S-Crate-Bottom3.  Processing halted.
+	processing begun of mesh:  S-Crate-Bottom0
+		mesh is an instance of :  S-Crate-Bottom3.  Processing halted.
+	processing begun of mesh:  S-Crate-Top0
+		mesh is an instance of :  S-Crate-Top3.  Processing halted.
+	processing begun of mesh:  WindowFrame1
+		WARNING: No materials have been assigned: 
+		num positions      :  288
+		num normals        :  288
+		num uvs            :  576
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1728
+	processing begun of mesh:  WindowFrame0
+		mesh is an instance of :  WindowFrame1.  Processing halted.
+	processing begun of mesh:  Vent7
+		processing begun of Standard material:  PureWhite
+		num positions      :  394
+		num normals        :  394
+		num uvs            :  788
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  834
+	processing begun of mesh:  Vent6
+		mesh is an instance of :  Vent7.  Processing halted.
+	processing begun of mesh:  Vent4
+		mesh is an instance of :  Vent7.  Processing halted.
+	processing begun of mesh:  Vent5
+		mesh is an instance of :  Vent7.  Processing halted.
+	processing begun of mesh:  Vent3
+		mesh is an instance of :  Vent7.  Processing halted.
+	processing begun of mesh:  Vent2
+		mesh is an instance of :  Vent7.  Processing halted.
+	processing begun of mesh:  Vent1
+		mesh is an instance of :  Vent7.  Processing halted.
+	processing begun of mesh:  Vent0
+		mesh is an instance of :  Vent7.  Processing halted.
+	processing begun of mesh:  Door2
+		WARNING: No materials have been assigned: 
+		num positions      :  296
+		num normals        :  296
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1512
+	processing begun of mesh:  Door1
+		mesh is an instance of :  Door2.  Processing halted.
+	processing begun of mesh:  Frame3
+		WARNING: No materials have been assigned: 
+		num positions      :  444
+		num normals        :  444
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2436
+	processing begun of mesh:  Frame2
+		mesh is an instance of :  Frame3.  Processing halted.
+	processing begun of mesh:  Frame1
+		mesh is an instance of :  Frame3.  Processing halted.
+	processing begun of mesh:  Switch2
+		WARNING: No materials have been assigned: 
+		num positions      :  104
+		num normals        :  104
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  366
+	processing begun of mesh:  Switch1
+		WARNING: No materials have been assigned: 
+		num positions      :  104
+		num normals        :  104
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  366
+	processing begun of mesh:  Switch0
+		WARNING: No materials have been assigned: 
+		num positions      :  104
+		num normals        :  104
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  366
+	processing begun of mesh:  Shelf1.001
+		WARNING: No materials have been assigned: 
+		num positions      :  832
+		num normals        :  832
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  4032
+	processing begun of mesh:  Shelf1
+		WARNING: No materials have been assigned: 
+		num positions      :  832
+		num normals        :  832
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  4032
+	processing begun of mesh:  Box2
+		WARNING: No materials have been assigned: 
+		num positions      :  68
+		num normals        :  68
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  354
+	processing begun of mesh:  BoxDoorL2
+		WARNING: No materials have been assigned: 
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  132
+	processing begun of mesh:  BoxDoorR2
+		WARNING: No materials have been assigned: 
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  132
+	processing begun of mesh:  BoxDoorR1
+		WARNING: No materials have been assigned: 
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  132
+	processing begun of mesh:  BoxDoorL1
+		WARNING: No materials have been assigned: 
+		num positions      :  24
+		num normals        :  24
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  132
+	processing begun of mesh:  Box1
+		WARNING: No materials have been assigned: 
+		num positions      :  68
+		num normals        :  68
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  354
+	processing begun of mesh:  Light.010
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.009
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.008
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.007
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.006
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.005
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.004
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.003
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.002
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Light.001
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  SmallLight
+		WARNING: No materials have been assigned: 
+		num positions      :  40
+		num normals        :  40
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  210
+	processing begun of mesh:  Door0
+		mesh is an instance of :  Door2.  Processing halted.
+	processing begun of mesh:  Engine2
+		WARNING: No materials have been assigned: 
+		num positions      :  48
+		num normals        :  48
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  234
+	processing begun of mesh:  Engine1
+		mesh is an instance of :  Engine2.  Processing halted.
+	processing begun of mesh:  Floor
+		WARNING: No materials have been assigned: 
+		num positions      :  496
+		num normals        :  496
+		num uvs            :  992
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  774
+	processing begun of mesh:  Walls
+		WARNING: No materials have been assigned: 
+		num positions      :  96
+		num normals        :  96
+		num uvs            :  192
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  204
+	processing begun of mesh:  Skirting
+		WARNING: No materials have been assigned: 
+		num positions      :  132
+		num normals        :  132
+		num uvs            :  264
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  264
+	processing begun of mesh:  Centrifugator
+		WARNING: No materials have been assigned: 
+		num positions      :  349
+		num normals        :  349
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1578
+	processing begun of mesh:  Desk
+		WARNING: No materials have been assigned: 
+		num positions      :  614
+		num normals        :  614
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  3648
+	processing begun of mesh:  Drawer0
+		WARNING: No materials have been assigned: 
+		num positions      :  264
+		num normals        :  264
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  1572
+	processing begun of mesh:  Drawer1
+		mesh is an instance of :  Drawer0.  Processing halted.
+	processing begun of mesh:  Tablet
+		WARNING: No materials have been assigned: 
+		num positions      :  68
+		num normals        :  68
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  396
+	processing begun of mesh:  Tubes
+		WARNING: No materials have been assigned: 
+		num positions      :  170
+		num normals        :  170
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  960
+	processing begun of mesh:  TubesHolder
+		WARNING: No materials have been assigned: 
+		num positions      :  404
+		num normals        :  404
+		num uvs            :  0
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  2472
+========= Writing of scene file started =========
+========= Writing of scene file completed =========
+========= end of processing =========
+elapsed time:  0 min, 1.1986 secs
