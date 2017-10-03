@@ -89,7 +89,7 @@ class Creep extends BABYLON.Mesh {
             this._moveDir.normalize();
             this._moveDir.scaleInPlace(this.speed * deltaTime);
             this.position.addInPlace(this._moveDir);
-            this.lookAt(this.nextMove);
+            this.lookAt(this.nextMove, Math.PI, 0, 0, BABYLON.Space.WORLD);
         }
     }
 }
@@ -134,6 +134,11 @@ class Drone extends Creep {
             meshes.forEach((m) => {
                 if (m instanceof BABYLON.Mesh) {
                     m.parent = this;
+                    m.rotation.copyFromFloats(0, 0, 0);
+                    let droneMaterial = new BABYLON.StandardMaterial("DroneMaterial", this.getScene());
+                    droneMaterial.diffuseTexture = new BABYLON.Texture("./data/drone-diffuse.png", this.getScene());
+                    droneMaterial.specularColor.copyFromFloats(0.2, 0.2, 0.2);
+                    m.material = droneMaterial;
                 }
             });
             this._isLoaded = true;
@@ -242,10 +247,13 @@ class Main {
         let pointLight2 = new BABYLON.PointLight("Light", new BABYLON.Vector3(-5, 20, 5), this.scene);
         pointLight2.intensity = 0.7;
         this.light2 = pointLight2;
-        let arcCamera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 1, new BABYLON.Vector3(12.5, 0, 12.5), this.scene);
-        arcCamera.setPosition(new BABYLON.Vector3(-8, 5, 8));
-        arcCamera.attachControl(this.canvas);
-        this.camera = arcCamera;
+        // let arcCamera: BABYLON.ArcRotateCamera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 1, new BABYLON.Vector3(12.5, 0, 12.5), this.scene);
+        // arcCamera.setPosition(new BABYLON.Vector3(-8, 5, 8));
+        // arcCamera.attachControl(this.canvas);
+        let freeCamera = new BABYLON.FreeCamera("Camera", new BABYLON.Vector3(0, 10, 0), this.scene);
+        freeCamera.setTarget(new BABYLON.Vector3(10, 0, 10));
+        freeCamera.attachControl(this.canvas);
+        this.camera = freeCamera;
         let game = new Game(this.scene);
         game.AddNewPlayer("Sven", true);
         new UserInterface(game);

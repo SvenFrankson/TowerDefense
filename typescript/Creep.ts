@@ -100,7 +100,7 @@ abstract class Creep extends BABYLON.Mesh {
             this._moveDir.normalize();
             this._moveDir.scaleInPlace(this.speed * deltaTime);
             this.position.addInPlace(this._moveDir);
-            this.lookAt(this.nextMove);
+            this.lookAt(this.nextMove, Math.PI, 0, 0, BABYLON.Space.WORLD);
         }
     }
 

@@ -17,6 +17,11 @@ class Drone extends Creep {
                     (m: BABYLON.AbstractMesh) => {
                         if (m instanceof BABYLON.Mesh) {
                             m.parent = this;
+                            m.rotation.copyFromFloats(0, 0, 0);
+                            let droneMaterial: BABYLON.StandardMaterial = new BABYLON.StandardMaterial("DroneMaterial", this.getScene());
+                            droneMaterial.diffuseTexture = new BABYLON.Texture("./data/drone-diffuse.png", this.getScene());
+                            droneMaterial.specularColor.copyFromFloats(0.2, 0.2, 0.2);
+                            m.material = droneMaterial;
                         }
                     }
                 );

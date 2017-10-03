@@ -27,10 +27,14 @@ class Main {
         pointLight2.intensity = 0.7;
         this.light2 = pointLight2;
 
-        let arcCamera: BABYLON.ArcRotateCamera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 1, new BABYLON.Vector3(12.5, 0, 12.5), this.scene);
-        arcCamera.setPosition(new BABYLON.Vector3(-8, 5, 8));
-        arcCamera.attachControl(this.canvas);
-        this.camera = arcCamera;
+        // let arcCamera: BABYLON.ArcRotateCamera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 1, new BABYLON.Vector3(12.5, 0, 12.5), this.scene);
+        // arcCamera.setPosition(new BABYLON.Vector3(-8, 5, 8));
+        // arcCamera.attachControl(this.canvas);
+
+        let freeCamera: BABYLON.FreeCamera = new BABYLON.FreeCamera("Camera", new BABYLON.Vector3(0, 10, 0), this.scene);
+        freeCamera.setTarget(new BABYLON.Vector3(10, 0, 10));
+        freeCamera.attachControl(this.canvas);
+        this.camera = freeCamera;
 
         let game: Game = new Game(this.scene);
         game.AddNewPlayer("Sven", true);
