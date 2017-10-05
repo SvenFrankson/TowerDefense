@@ -100,7 +100,10 @@ var BuildingType;
     BuildingType[BuildingType["Spawner"] = 1] = "Spawner";
     BuildingType[BuildingType["Wall"] = 2] = "Wall";
     BuildingType[BuildingType["Gatling"] = 3] = "Gatling";
+    BuildingType[BuildingType["Props"] = 4] = "Props";
 })(BuildingType || (BuildingType = {}));
+class BuildingData {
+}
 class TileData {
 }
 class TerrainData {
@@ -121,7 +124,34 @@ class TerrainData {
             }
         }
         data.tiles[6][17].buildable = true;
-        data.tiles[6][17].building = BuildingType.Spawner;
+        data.tiles[6][17].building = {
+            type: BuildingType.Spawner,
+            name: "",
+            orientation: 0,
+            spawns: [
+                new Spawn("d", 120),
+                new Spawn("d", 240),
+                new Spawn("d", 360),
+                new Spawn("d", 620),
+                new Spawn("d", 740),
+                new Spawn("d", 860),
+                new Spawn("d", 1120),
+                new Spawn("d", 1240),
+                new Spawn("d", 1360),
+                new Spawn("d", 1620),
+                new Spawn("d", 1740),
+                new Spawn("d", 1860),
+                new Spawn("d", 2120),
+                new Spawn("d", 2240),
+                new Spawn("d", 2360),
+            ]
+        };
+        data.tiles[6][18].buildable = true;
+        data.tiles[6][18].building = {
+            type: BuildingType.Props,
+            name: "pyramid",
+            orientation: 2
+        };
         return data;
     }
 }
@@ -654,9 +684,15 @@ class Tile {
     }
     deserialize(data) {
         this.buildable = data.buildable;
-        if (data.building === BuildingType.Spawner) {
-            this.building = new Spawner(this);
-            this.building.load();
+        if (data.building) {
+            if (data.building.type === BuildingType.Spawner) {
+                this.building = new Spawner(data.building.spawns, this);
+                this.building.load();
+            }
+            else if (data.building.type === BuildingType.Props) {
+                this.building = new Props(data.building.name, data.building.orientation, this);
+                this.building.load();
+            }
         }
     }
     createTower() {
@@ -779,7 +815,8 @@ class Tile {
         let data = new TileData();
         data.buildable = this.buildable;
         if (this.building) {
-            data.building = this.building.buildingType();
+            data.building.type = this.building.buildingType();
+            data.building.name = this.building.name;
         }
         return data;
     }
@@ -802,6 +839,7 @@ class Building extends BABYLON.Mesh {
     get game() {
         return this.tile.game;
     }
+    update() { }
 }
 class Gatling extends Building {
     constructor(tile) {
@@ -948,11 +986,37 @@ class Gatling extends Building {
 }
 Gatling.BulletCount = 10;
 Gatling.FireRate = 2;
+class Props extends Building {
+    constructor(name, orientation, tile) {
+        super(name, tile);
+        this.hitpoint = Infinity;
+        this.rotation.y = orientation * Math.PI / 2;
+        this.getScene().unregisterBeforeRender(this.updateCallback);
+    }
+    load() {
+        this._isLoaded = true;
+        BABYLON.SceneLoader.ImportMesh("", "./data/" + this.name + ".babylon", "", this.getScene(), (meshes, particleSystems, skeletons) => {
+            for (let i = 0; i < meshes.length; i++) {
+                meshes[i].parent = this;
+            }
+        });
+    }
+    buildingType() {
+        return BuildingType.Props;
+    }
+}
+class Spawn {
+    constructor(n, t) {
+        this.n = n;
+        this.t = t;
+    }
+}
 class Spawner extends Building {
-    constructor(tile) {
+    constructor(spawns, tile) {
         super("Spawner", tile);
         this._kSpawn = 0;
         this.hitpoint = 42000;
+        this.spawns = spawns;
     }
     load() {
         this._isLoaded = true;
@@ -966,11 +1030,13 @@ class Spawner extends Building {
     }
     spawn() {
         this._kSpawn++;
-        if (this._kSpawn > 300) {
-            let creep = new Drone(this.game);
-            creep.load();
-            creep.position.copyFrom(this.position);
-            this._kSpawn = 0;
+        while (this.spawns.length > 0 && this._kSpawn > this.spawns[0].t) {
+            let spawn = this.spawns.splice(0, 1)[0];
+            if (spawn.n === "d") {
+                let creep = new Drone(this.game);
+                creep.load();
+                creep.position.copyFrom(this.position);
+            }
         }
     }
     buildingType() {

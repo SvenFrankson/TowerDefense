@@ -7,23 +7,15 @@ Exporter version: 5.2.0, Blender version: 2.78 (sub 0)
 		texture directory:  C:\Users\Sven\Documents\SvenFrankson\TowerDefense\data\
 	Python World class constructor completed
 	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
-	processing begun of mesh:  Body
+	processing begun of mesh:  Pyramid
 		processing begun of Standard material:  Material
-		num positions      :  234
-		num normals        :  234
+		num positions      :  204
+		num normals        :  204
 		num uvs            :  0
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  342
-	processing begun of mesh:  Canon
-		registered as also a user of material:  Material
-		num positions      :  144
-		num normals        :  144
-		num uvs            :  0
-		num uvs2           :  0
-		num colors         :  0
-		num indices        :  216
+		num indices        :  306
 ========= Writing of scene file started =========
 ========= Writing of scene file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 0.0495 secs
+elapsed time:  0 min, 0.022 secs

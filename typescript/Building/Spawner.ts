@@ -1,10 +1,29 @@
-class Spawner extends Building {
+interface ISpawn {
+    n: string;
+    t: number;
+}
+
+class Spawn {
     
     constructor(
+        public n: string,
+        public t: number
+    ) {
+
+    }
+}
+
+class Spawner extends Building {
+
+    private spawns: ISpawn[];
+    
+    constructor(
+        spawns: ISpawn[],
         tile: Tile
     ) {
         super("Spawner", tile);
         this.hitpoint = 42000;
+        this.spawns = spawns;
     }
 
     public load(): void {
@@ -31,11 +50,13 @@ class Spawner extends Building {
     private _kSpawn: number = 0;
     public spawn(): void {
         this._kSpawn ++;
-        if (this._kSpawn > 300) {
-            let creep: Creep = new Drone(this.game);
-            creep.load();
-            creep.position.copyFrom(this.position)
-            this._kSpawn = 0;
+        while (this.spawns.length > 0 && this._kSpawn > this.spawns[0].t) {
+            let spawn: Spawn = this.spawns.splice(0, 1)[0];
+            if (spawn.n === "d") {
+                let creep: Creep = new Drone(this.game);
+                creep.load();
+                creep.position.copyFrom(this.position)
+            }
         }
     }
 

@@ -23,10 +23,10 @@ abstract class Building extends BABYLON.Mesh {
 
     public abstract load(): void;
 
-    private updateCallback = () => {
+    protected updateCallback = () => {
         this.update();
     }
-    public abstract update(): void;
+    public update(): void {}
 
     public abstract buildingType(): BuildingType;
 }

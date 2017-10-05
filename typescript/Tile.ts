@@ -33,9 +33,14 @@ class Tile {
 
     public deserialize(data: TileData): void {
         this.buildable = data.buildable;
-        if (data.building === BuildingType.Spawner) {
-            this.building = new Spawner(this);
-            this.building.load();
+        if (data.building) {
+            if (data.building.type === BuildingType.Spawner) {
+                this.building = new Spawner(data.building.spawns, this);
+                this.building.load();
+            } else if (data.building.type === BuildingType.Props) {
+                this.building = new Props(data.building.name, data.building.orientation, this);
+                this.building.load();
+            }
         }
     }
 
@@ -169,7 +174,8 @@ class Tile {
         let data: TileData = new TileData();
         data.buildable = this.buildable;
         if (this.building) {
-            data.building = this.building.buildingType();
+            data.building.type = this.building.buildingType();
+            data.building.name = this.building.name;
         }
         return data;
     }
