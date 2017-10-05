@@ -4,18 +4,42 @@ Exporter version: 5.2.0, Blender version: 2.78 (sub 0)
 		selected layers only:  true
 		flat shading entire scene:  false
 		inline textures:  false
-		texture directory:  C:\Users\Sven\Documents\SvenFrankson\TowerDefense\data\
+		texture directory:  C:\Users\Sven\Documents\SvenFrankson\tower-defense\data\
 	Python World class constructor completed
 	WARNING: No active camera has been assigned, or is not in a currently selected Blender layer
-	processing begun of mesh:  Full.001
+	processing begun of mesh:  Body
 		processing begun of Standard material:  Stone
-		num positions      :  286
-		num normals        :  286
-		num uvs            :  572
+		num positions      :  30
+		num normals        :  30
+		num uvs            :  60
 		num uvs2           :  0
 		num colors         :  0
-		num indices        :  384
+		num indices        :  36
+	processing begun of mesh:  RingTop
+		registered as also a user of material:  Stone
+		num positions      :  84
+		num normals        :  84
+		num uvs            :  168
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  120
+	processing begun of mesh:  Head
+		registered as also a user of material:  Stone
+		num positions      :  60
+		num normals        :  60
+		num uvs            :  120
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  84
+	processing begun of mesh:  RingBottom
+		registered as also a user of material:  Stone
+		num positions      :  112
+		num normals        :  112
+		num uvs            :  224
+		num uvs2           :  0
+		num colors         :  0
+		num indices        :  144
 ========= Writing of scene file started =========
 ========= Writing of scene file completed =========
 ========= end of processing =========
-elapsed time:  0 min, 0.0495 secs
+elapsed time:  0 min, 0.044 secs

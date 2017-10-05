@@ -158,19 +158,52 @@ class TerrainData {
 class Drone extends Creep {
     constructor(game) {
         super("drone", game);
+        this._kAnim = 0;
+        this.animate = () => {
+            this.ringTop.rotation.y += 0.02;
+            this.ringTop.position.y = 0.1 * Math.cos(this._kAnim / 60);
+            this.ringBottom.rotation.y -= 0.01;
+            this.ringBottom.position.y = -0.1 * Math.cos(this._kAnim / 30);
+        };
     }
     load() {
         BABYLON.SceneLoader.ImportMesh("", "./data/" + this.name + ".babylon", "", this.getScene(), (meshes, particleSystems, skeletons) => {
+            let droneMaterial = new BABYLON.StandardMaterial("DroneMaterial", this.getScene());
+            droneMaterial.diffuseColor.copyFromFloats(0.5, 0.5, 0.5);
+            droneMaterial.diffuseTexture = new BABYLON.Texture("./data/drone-diffuse.png", this.getScene());
+            droneMaterial.specularColor.copyFromFloats(0.2, 0.2, 0.2);
             meshes.forEach((m) => {
                 if (m instanceof BABYLON.Mesh) {
-                    m.parent = this;
-                    m.rotation.copyFromFloats(0, 0, 0);
-                    let droneMaterial = new BABYLON.StandardMaterial("DroneMaterial", this.getScene());
-                    droneMaterial.diffuseTexture = new BABYLON.Texture("./data/drone-diffuse.png", this.getScene());
-                    droneMaterial.specularColor.copyFromFloats(0.2, 0.2, 0.2);
-                    m.material = droneMaterial;
+                    if (m.name === "Body") {
+                        this.body = m;
+                        this.body.parent = this;
+                        this.body.material = droneMaterial;
+                    }
+                    if (m.name === "Head") {
+                        this.head = m;
+                        this.head.parent = this;
+                        this.head.material = droneMaterial;
+                    }
+                    if (m.name === "RingTop") {
+                        this.ringTop = m;
+                        this.ringTop.parent = this;
+                        this.ringTop.material = droneMaterial;
+                    }
+                    if (m.name === "RingBottom") {
+                        this.ringBottom = m;
+                        this.ringBottom.parent = this;
+                        this.ringBottom.material = droneMaterial;
+                    }
                 }
             });
+            if (!this.body || !this.head || !this.ringTop || !this.ringBottom) {
+                return console.error("Failed to load some part of 'Drone'.");
+            }
+            this.body.parent = this;
+            this.head.parent = this;
+            this.ringTop.parent = this;
+            this.ringBottom.parent = this;
+            this.getScene().registerBeforeRender(this.animate);
             this._isLoaded = true;
         });
     }
@@ -186,6 +219,7 @@ class Drone extends Creep {
             Creep.instances.splice(index, 1);
         }
         this.getScene().unregisterBeforeRender(this.update);
+        this.getScene().unregisterBeforeRender(this.animate);
     }
 }
 class Game {
@@ -271,12 +305,11 @@ class Main {
     createScene() {
         this.scene = new BABYLON.Scene(this.engine);
         this.resize();
-        let pointLight1 = new BABYLON.PointLight("Light", new BABYLON.Vector3(5, 20, 5), this.scene);
-        pointLight1.intensity = 0.7;
-        this.light1 = pointLight1;
-        let pointLight2 = new BABYLON.PointLight("Light", new BABYLON.Vector3(-5, 20, 5), this.scene);
-        pointLight2.intensity = 0.7;
-        this.light2 = pointLight2;
+        let ambientLight = new BABYLON.HemisphericLight("AmbientLight", BABYLON.Vector3.Up(), this.scene);
+        ambientLight.groundColor.copyFromFloats(0.5, 0.5, 0.5);
+        ambientLight.intensity = 0.7;
+        let pointLight = new BABYLON.PointLight("PointLight", new BABYLON.Vector3(0, 10, 0), this.scene);
+        pointLight.intensity = 0.7;
         // let arcCamera: BABYLON.ArcRotateCamera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 1, new BABYLON.Vector3(12.5, 0, 12.5), this.scene);
         // arcCamera.setPosition(new BABYLON.Vector3(-8, 5, 8));
         // arcCamera.attachControl(this.canvas);
