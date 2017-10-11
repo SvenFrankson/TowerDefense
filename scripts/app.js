@@ -320,6 +320,15 @@ class Main {
         let game = new Game(this.scene);
         game.AddNewPlayer("Sven", true);
         new UserInterface(game);
+        BABYLON.SceneLoader.ImportMesh("", "./data/organic-drone.babylon", "", this.scene, (meshes, particleSystems, skeletons) => {
+            console.log("Meshes");
+            console.log(meshes);
+            console.log("ParticleSystems");
+            console.log(particleSystems);
+            console.log("Skeletons");
+            console.log(skeletons);
+            skeletons[0].beginAnimation("ArmatureAction", true);
+        });
     }
     animate() {
         this.engine.runRenderLoop(() => {
